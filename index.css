@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+.barra-superior {
+  width: 100%;
+  height: 135px;
+  border-bottom: 2px solid #fff;
+  padding: 10px;
+}
+.barra-superior h1 {
+  text-align: center;
+}
+.barra-superior a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 20px;
+  text-align: left;
+}
+.barra-superior a:hover {
+  color: #ffff00;
+}
+.principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza os cards horizontalmente */
+}
+.principal .main-titulo {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 10px;
+}
+.card {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card .titulo {
+  width: 100%;
+  height: 5%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px;
+}
+.card .imagem {
+  margin-top: 5px;
+  width: 100%;
+  height: 90%;
+}
+.card .imagem img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+.card .descricao {
+  width: 100%;
+  height: 5%;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+}
+.card .descricao a {
+  color: #0066ff;
+  text-decoration: none;
+}
+.card .descricao a:hover {
+  color: #ffff00;
+}
