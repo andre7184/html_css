@@ -30,8 +30,9 @@ body {
 .principal {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Espaço entre os cards */
-  justify-content: center; /* Centraliza os cards horizontalmente */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 .principal .main-titulo {
   width: 100%;
