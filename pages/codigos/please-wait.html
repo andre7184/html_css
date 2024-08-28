@@ -14,29 +14,39 @@
       <div class="imagem"><img src="../../imgs/please-wait.gif" alt="" /></div>
     </div>
     <div class="principal">
-      <div class="main-titulo">Codigo html/css Loading - Please Wait</div>
+      <div class="main-titulo">Codigo html/css - Loading Please Wait</div>
       <div class="container">
         <div class="editor">
-          <label for="htmlCode">Código HTML</label>
-          <textarea id="htmlCode" placeholder="Digite seu código HTML aqui">
-          <div class="container">
-            <div class="wrapper">
-                <div class="loader"><div class="dot"></div></div>
-                <div class="loader"><div class="dot"></div></div>
-                <div class="loader"><div class="dot"></div></div>
-                <div class="loader"><div class="dot"></div></div>
-                <div class="loader"><div class="dot"></div></div>
-                <div class="loader"><div class="dot"></div></div>
-            </div>
-            <div class="text">Processando</div>
-        </div>
-
+          <label for="htmlCode">Código do arquivo HTML</label>
+          <textarea readonly id="htmlCode">
+            <!DOCTYPE html>
+            <html lang="pt-br">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Loading - Please Wait</title>
+                <link rel="stylesheet" href="estyle.css" />
+              </head>
+              <body>
+                <div class="container">
+                  <div class="wrapper">
+                      <div class="loader"><div class="dot"></div></div>
+                      <div class="loader"><div class="dot"></div></div>
+                      <div class="loader"><div class="dot"></div></div>
+                      <div class="loader"><div class="dot"></div></div>
+                      <div class="loader"><div class="dot"></div></div>
+                      <div class="loader"><div class="dot"></div></div>
+                  </div>
+                  <div class="text">Processando</div>
+                </div>
+              </body>
+            </html>
         </textarea
           >
         </div>
         <div class="editor">
-          <label for="cssCode">Código CSS</label>
-          <textarea id="cssCode" placeholder="Digite seu código CSS aqui">
+          <label for="cssCode">Código CSS do arquivo estyle.css</label>
+          <textarea readonly id="cssCode">
           * {
             margin: 0;
             padding: 0;
@@ -135,69 +145,248 @@
           >
         </div>
       </div>
+      <div class="conteudo">
+        <h1>Explicação do código</h1>
+
+        <div class="section">
+          <h2>Arquivo HTML</h2>
+          <ul>
+            <li>
+              <strong>&lt;!DOCTYPE html&gt;</strong>Declaração do tipo de
+              documento, especificando que é um documento HTML5.
+            </li>
+            <li>
+              <strong>&lt;html lang="en"&gt;</strong>Início do documento HTML,
+              com o idioma definido como inglês.
+            </li>
+            <li>
+              <strong>&lt;head&gt;</strong>Contém metadados sobre o documento,
+              como o conjunto de caracteres e o título.
+            </li>
+            <li>
+              <strong>&lt;meta charset="UTF-8"&gt;</strong>Define a codificação
+              de caracteres como UTF-8.
+            </li>
+            <li>
+              <strong>&lt;title&gt;Preview&lt;/title&gt;</strong>Define o título
+              da página que aparece na aba do navegador.
+            </li>
+            <li>
+              <strong>&lt;link rel="stylesheet" href="estyle.css" &gt;</strong
+              >caminho para o arquivo do codigo css.
+            </li>
+            <li>
+              <strong>&lt;body&gt;</strong>Contém o conteúdo visível da página.
+            </li>
+            <li>
+              <strong>&lt;div class="container"&gt;</strong>Div principal que
+              contém todos os elementos.
+            </li>
+            <li>
+              <strong>&lt;div class="wrapper"&gt;</strong>Div que agrupa os
+              elementos de carregamento.
+            </li>
+            <li>
+              <strong
+                >&lt;div class="loader"&gt;&lt;div
+                class="dot"&gt;&lt;/div&gt;&lt;/div&gt;</strong
+              >Seis divs que representam os elementos de carregamento, cada um
+              contendo uma div interna com a classe <code>dot</code>.
+            </li>
+            <li>
+              <strong>&lt;div class="text"&gt;Processando&lt;/div&gt;</strong
+              >Div que exibe o texto "Processando".
+            </li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Arquivo CSS</h2>
+          <ul>
+            <li>
+              <strong>Global Selector (*)</strong>:
+              <ul>
+                <li>
+                  <strong>margin: 0;</strong> Remove todas as margens padrão.
+                </li>
+                <li>
+                  <strong>padding: 0;</strong> Remove todos os preenchimentos
+                  padrão.
+                </li>
+                <li>
+                  <strong>font-family: sans-serif;</strong> Define a fonte
+                  padrão como sans-serif.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>body</strong>:
+              <ul>
+                <li>
+                  <strong>display: flex;</strong> Define o corpo como um
+                  contêiner flexível.
+                </li>
+                <li>
+                  <strong>justify-content: center;</strong> Centraliza o
+                  conteúdo horizontalmente.
+                </li>
+                <li>
+                  <strong>align-items: center;</strong> Centraliza o conteúdo
+                  verticalmente.
+                </li>
+                <li>
+                  <strong>min-height: 100vh;</strong> Define a altura mínima
+                  como 100% da altura da janela de visualização.
+                </li>
+                <li>
+                  <strong>background: #0079d7;</strong> Define a cor de fundo
+                  como azul (#0079d7).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.container</strong>:
+              <ul>
+                <li>
+                  <strong>position: relative;</strong> Define a posição como
+                  relativa.
+                </li>
+                <li>
+                  <strong>width: 100%;</strong> Define a largura como 100%.
+                </li>
+                <li>
+                  <strong>display: flex;</strong> Define o contêiner como
+                  flexível.
+                </li>
+                <li>
+                  <strong>justify-content: center;</strong> Centraliza o
+                  conteúdo horizontalmente.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.container .wrapper</strong>:
+              <ul>
+                <li>
+                  <strong>position: absolute;</strong> Define a posição como
+                  absoluta.
+                </li>
+                <li>
+                  <strong>top: -35px;</strong> Move o elemento 35 pixels para
+                  cima.
+                </li>
+                <li>
+                  <strong>transform: scale(1.5);</strong> Aumenta a escala do
+                  elemento em 1.5 vezes.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.loader</strong>:
+              <ul>
+                <li>
+                  <strong>position: absolute;</strong> Define a posição como
+                  absoluta.
+                </li>
+                <li>
+                  <strong>left: -25px;</strong> Move o elemento 25 pixels para a
+                  esquerda.
+                </li>
+                <li>
+                  <strong>width: 50px;</strong> Define a largura como 50 pixels.
+                </li>
+                <li>
+                  <strong>height: 50px;</strong> Define a altura como 50 pixels.
+                </li>
+                <li>
+                  <strong>animation: rotate 3.5s linear infinite;</strong>
+                  Aplica a animação de rotação por 3.5 segundos de forma linear
+                  e infinita.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.loader:nth-child(n)</strong>:
+              <ul>
+                <li>
+                  <strong>animation-delay: Xs;</strong> Define um atraso na
+                  animação para cada elemento filho.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>@keyframes rotate</strong>:
+              <ul>
+                <li>
+                  <strong>30%:</strong> Rotaciona o elemento em 220 graus.
+                </li>
+                <li>
+                  <strong>40%:</strong> Rotaciona o elemento em 450 graus.
+                </li>
+                <li>
+                  <strong>75%:</strong> Rotaciona o elemento em 720 graus e
+                  define a opacidade como 1.
+                </li>
+                <li><strong>76%:</strong> Define a opacidade como 0.</li>
+                <li>
+                  <strong>100%:</strong> Rotaciona o elemento de volta para 0
+                  graus e define a opacidade como 0.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.loader .dot</strong>:
+              <ul>
+                <li>
+                  <strong>position: relative;</strong> Define a posição como
+                  relativa.
+                </li>
+                <li>
+                  <strong>top: 30px;</strong> Move o elemento 30 pixels para
+                  baixo.
+                </li>
+                <li>
+                  <strong>width: 7px;</strong> Define a largura como 7 pixels.
+                </li>
+                <li>
+                  <strong>height: 7px;</strong> Define a altura como 7 pixels.
+                </li>
+                <li>
+                  <strong>background: #fff;</strong> Define a cor de fundo como
+                  branco.
+                </li>
+                <li>
+                  <strong>border-radius: 50%;</strong> Define bordas
+                  arredondadas, tornando o elemento circular.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.container .text</strong>:
+              <ul>
+                <li>
+                  <strong>position: absolute;</strong> Define a posição como
+                  absoluta.
+                </li>
+                <li>
+                  <strong>color: #fff;</strong> Define a cor do texto como
+                  branco.
+                </li>
+                <li>
+                  <strong>bottom: -85px;</strong> Move o elemento 85 pixels para
+                  baixo.
+                </li>
+                <li>
+                  <strong>font-size: 25px;</strong> Define o tamanho da fonte
+                  como 25 pixels.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="botao">
         <button onclick="testCode()">Testar</button>
-      </div>
-      <div class="title">Explicação do Código</div>
-      <div class="conteudo">
-        <p><strong>HTML</strong></p>
-        <p>&lt;!DOCTYPE html&gt;: Declara o tipo de documento como HTML5.</p>
-        <p>&lt;html lang="en"&gt;: Define o idioma da página como inglês.</p>
-        <p>&lt;head&gt;: Contém metadados e links para estilos.</p>
-        <p>&lt;meta charset="UTF-8"&gt;: Define a codificação de caracteres como UTF-8.</p>
-        <p>&lt;title&gt;Preview&lt;/title&gt;: Define o título da página.</p>
-        <p>&lt;style&gt;: Contém o CSS embutido.</p>
-        <p>&lt;body&gt;: Contém o conteúdo visível da página.</p>
-        <p>&lt;div class="container"&gt;: Um contêiner para centralizar o conteúdo.</p>
-        <p>&lt;div class="wrapper"&gt;: Um contêiner para os loaders.</p>
-        <p>&lt;div class="loader"&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;/div&gt;: Cada loader contém um ponto branco.</p>
-        <p>&lt;div class="text"&gt;Processando&lt;/div&gt;: Texto exibido abaixo dos loaders.</p>
-        <p><strong>CSS</strong></p>
-        <p>margin: Define a margem de todos os elementos como 0.</p>
-        <p>padding: Define o preenchimento de todos os elementos como 0.</p>
-        <p>font-family: Define a fonte de todos os elementos como sans-serif.</p>
-        <p><strong>body</strong></p>
-        <p>display: Define o tipo de layout como flexível (flex).</p>
-        <p>justify-content: Centraliza o conteúdo horizontalmente.</p>
-        <p>align-items: Centraliza o conteúdo verticalmente.</p>
-        <p>min-height: Define a altura mínima como 100% da altura da janela de visualização (viewport).</p>
-        <p>background: Define a cor de fundo como azul (#0079d7).</p>
-        <p><strong>.container</strong></p>
-        <p>position: Define a posição como relativa.</p>
-        <p>width: Define a largura como 100%.</p>
-        <p>display: Define o tipo de layout como flexível (flex).</p>
-        <p>justify-content: Centraliza o conteúdo horizontalmente.</p>
-        <p><strong>.wrapper</strong></p>
-        <p>position: Define a posição como absoluta.</p>
-        <p>top: Define a posição superior como -35px.</p>
-        <p>transform: Aplica uma escala de 1.5 ao elemento.</p>
-        <p><strong>.loader</strong></p>
-        <p>position: Define a posição como absoluta.</p>
-        <p>left: Define a posição à esquerda como -25px.</p>
-        <p>width: Define a largura como 50px.</p>
-        <p>height: Define a altura como 50px.</p>
-        <p>animation: Aplica a animação “rotate” com duração de 3.5 segundos, linear e infinita.</p>
-        <p><strong>.loader:nth-child(n)</strong></p>
-        <p>animation-delay: Define um atraso na animação para cada loader, variando de 0.15s a 0.90s.</p>
-        <p><strong>@keyframes rotate</strong></p>
-        <p>30%: Rotaciona o elemento em 220 graus.</p>
-        <p>40%: Rotaciona o elemento em 450 graus.</p>
-        <p>75%: Rotaciona o elemento em 720 graus e define a opacidade como 1.</p>
-        <p>76%: Define a opacidade como 0.</p>
-        <p>100%: Retorna a rotação para 0 graus e a opacidade para 0.</p>
-        <p><strong>.loader .dot</strong></p>
-        <p>position: Define a posição como relativa.</p>
-        <p>top: Define a posição superior como 30px.</p>
-        <p>width: Define a largura como 7px.</p>
-        <p>height: Define a altura como 7px.</p>
-        <p>background: Define a cor de fundo como branco (#fff).</p>
-        <p>border-radius: Define os cantos como arredondados (50%).</p>
-        <p><strong>.container .text</strong></p>
-        <p>position: Define a posição como absoluta.</p>
-        <p>color: Define a cor do texto como branco (#fff).</p>
-        <p>bottom: Define a posição inferior como -85px.</p>
-        <p>font-size: Define o tamanho da fonte como 25px.</p>
-        <p>Esses atributos juntos criam uma animação de carregamento com pontos giratórios e um texto “Processando” centralizado na tela.</p>
       </div>
     </div>
     <script src="script.js"></script>

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding-bottom: 10px;
+}
+.barra-superior {
+  width: 100%;
+  height: 160px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+.barra-superior h1 {
+  text-align: center;
+}
+.barra-superior a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 20px;
+  text-align: left;
+}
+.barra-superior a:hover {
+  color: #ffff00;
+}
+.barra-superior .botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.barra-superior button {
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.barra-superior button:hover {
+  background-color: #ffff00;
+  color: #000;
+}
+
+.principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.category-container {
+  margin-top: 20px;
+  width: 500px;
+}
+.post-container {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  width: 100%;
+}
+.post {
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.category-container img {
+  width: 100%;
+  border-radius: 15px;
+}
+.category-container h2 {
+  text-align: center;
+}
+#postForm {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #3a3a3a;
+  padding: 20px;
+  width: 300px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  text-align: center;
+}
+#postForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+#postForm input,
+#postForm textarea,
+#postForm select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#postForm button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#postForm button:hover {
+  background-color: #45a049;
+}

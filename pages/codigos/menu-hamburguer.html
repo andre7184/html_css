@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Hamburguer</title>
+    <link rel="stylesheet" href="./estile.css" />
+  </head>
+  <body>
+    <div class="barra-superior">
+      <div class="voltar">
+        <a href="../../index.html">Voltar</a>
+      </div>
+      <div class="imagem">
+        <img src="../../imgs/menu-hamburguer.gif" alt="" />
+      </div>
+    </div>
+    <div class="principal">
+      <div class="main-titulo">Codigo html/css - Menu Hamburguer</div>
+      <div class="container">
+        <div class="editor">
+          <label for="htmlCode">Código do arquivo HTML</label>
+          <textarea readonly id="htmlCode">
+            <!DOCTYPE html>
+            <html lang="pt-br">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Loading - Please Wait</title>
+                <link rel="stylesheet" href="estyle.css" />
+              </head>
+              <body>
+                <div class="menu-toggle">
+                  <input type="checkbox" id="menu-check" />
+                  <div class="menu-btn">
+                    <label for="menu-check">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </label>
+                  </div>
+                  <nav class="menu">
+                    <a href="#">Home</a></li>
+                    <a href="#">About</a></li>
+                    <a href="#">Services</a></li>
+                    <a href="#">Contact</a></li>
+                  </nav>
+                </div>
+              </body>
+            </html>
+        </textarea
+          >
+        </div>
+        <div class="editor">
+          <label for="cssCode">Código CSS do arquivo estyle.css</label>
+          <textarea readonly id="cssCode">
+            body {
+              margin: 0;
+              padding: 0;
+            }
+            .menu-toggle {
+              background-color: #333;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              padding: 5px;
+            }
+      
+            .menu-btn {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+              position: relative;
+            }
+      
+            .menu-btn label {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              height: 100%;
+            }
+      
+            .menu-btn span {
+              display: block;
+              width: 100%;
+              height: 3px;
+              background-color: #fff;
+              transition: all 0.3s ease;
+            }
+      
+            #menu-check {
+              display: none;
+            }
+      
+            #menu-check:checked + .menu-btn label span:nth-child(1) {
+              transform: rotate(45deg);
+              position: absolute;
+              top: 12px;
+            }
+      
+            #menu-check:checked + .menu-btn label span:nth-child(2) {
+              opacity: 0;
+            }
+      
+            #menu-check:checked + .menu-btn label span:nth-child(3) {
+              transform: rotate(-45deg);
+              position: absolute;
+              top: 12px;
+            }
+      
+            .menu {
+              display: none;
+              flex-direction: column;
+              align-items: center;
+              margin-top: 10px;
+              padding: 5px;
+            }
+      
+            #menu-check:checked ~ .menu {
+              display: flex;
+            }
+            .menu a {
+              text-decoration: none;
+              color: #fff;
+              font-size: 18px;
+              margin-bottom: 10px;
+            }
+      
+            .menu a:hover {
+              color:#ffff00;
+            }
+        </textarea
+          >
+        </div>
+      </div>
+      <div class="conteudo">
+        <h1>Explicação do código</h1>
+
+        <div class="section">
+          <h2>Arquivo HTML</h2>
+          <ul>
+            <li>
+              <strong>&lt;!DOCTYPE html&gt;</strong>: Declaração do tipo de
+              documento que informa ao navegador que este é um documento HTML5.
+            </li>
+            <li>
+              <strong>&lt;html lang="pt-br"&gt;</strong>: Início do documento
+              HTML, com o atributo <code>lang</code> especificando que o idioma
+              do conteúdo é português do Brasil. <strong>&lt;/html&gt;</strong>:
+              Fim do documento HTML.
+            </li>
+            <li>
+              <strong>&lt;head&gt;</strong>: Contém metadados sobre o documento,
+              como o conjunto de caracteres e a configuração de visualização.
+              <strong>&lt;/head&gt;</strong>: Fim da seção de metadados.
+            </li>
+            <li>
+              <strong>&lt;meta charset="UTF-8" /&gt;</strong>: Define a
+              codificação de caracteres como UTF-8, que suporta quase todos os
+              caracteres e símbolos.
+            </li>
+            <li>
+              <strong
+                >&lt;meta name="viewport" content="width=device-width,
+                initial-scale=1.0" /&gt;</strong
+              >: Configura a visualização para garantir que a página seja
+              exibida corretamente em dispositivos móveis.
+            </li>
+            <li>
+              <strong>&lt;title&gt;Loading - Please Wait&lt;/title&gt;</strong>:
+              Define o título da página que aparece na aba do navegador.
+            </li>
+            <li>
+              <strong>&lt;link rel="stylesheet" href="estyle.css" /&gt;</strong
+              >: Vincula um arquivo CSS externo chamado "estyle.css" para
+              estilizar a página.
+            </li>
+            <li>
+              <strong>&lt;body&gt;</strong>: Contém o conteúdo visível da
+              página. <strong>&lt;/body&gt;</strong>: Fim do conteúdo visível da
+              página.
+            </li>
+            <li>
+              <strong>&lt;div class="menu-toggle"&gt;</strong>: Cria um
+              contêiner para o menu de navegação com a classe "menu-toggle".
+              <strong>&lt;/div&gt;</strong>: Fim do contêiner do menu de
+              navegação.
+            </li>
+            <li>
+              <strong>&lt;input type="checkbox" id="menu-check" /&gt;</strong>:
+              Cria uma caixa de seleção oculta que será usada para alternar o
+              menu.
+            </li>
+            <li>
+              <strong>&lt;div class="menu-btn"&gt;</strong>: Contêiner para o
+              botão do menu. <strong>&lt;/div&gt;</strong>: Fim do contêiner do
+              botão do menu.
+            </li>
+            <li>
+              <strong>&lt;label for="menu-check"&gt;</strong>: Rótulo associado
+              à caixa de seleção, que contém três spans para criar o ícone do
+              menu. <strong>&lt;/label&gt;</strong>: Fim do rótulo associado à
+              caixa de seleção.
+            </li>
+            <li>
+              <strong>&lt;span&gt;&lt;/span&gt;</strong>: Três spans vazios que
+              formam as linhas do ícone do menu.
+            </li>
+            <li>
+              <strong>&lt;nav class="menu"&gt;</strong>: Cria um elemento de
+              navegação com a classe "menu". <strong>&lt;/nav&gt;</strong>: Fim
+              do elemento de navegação.
+            </li>
+            <li>
+              <strong>&lt;a href="#"&gt;Home&lt;/a&gt;</strong>: Link para a
+              página inicial.
+            </li>
+            <li>
+              <strong>&lt;a href="#"&gt;About&lt;/a&gt;</strong>: Link para a
+              página "Sobre".
+            </li>
+            <li>
+              <strong>&lt;a href="#"&gt;Services&lt;/a&gt;</strong>: Link para a
+              página de serviços.
+            </li>
+            <li>
+              <strong>&lt;a href="#"&gt;Contact&lt;/a&gt;</strong>: Link para a
+              página de contato.
+            </li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Arquivo CSS</h2>
+          <ul>
+            <li>
+              <strong>body</strong>: Define o estilo global do corpo da página.
+              <ul>
+                <li><strong>margin: 0;</strong>: Remove a margem padrão.</li>
+                <li>
+                  <strong>padding: 0;</strong>: Remove o preenchimento padrão.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu-toggle</strong>: Estiliza o contêiner do menu de
+              navegação.
+              <ul>
+                <li>
+                  <strong>background-color: #333;</strong>: Define a cor de
+                  fundo como cinza escuro.
+                </li>
+                <li>
+                  <strong>display: flex;</strong>: Utiliza o modelo de layout
+                  flexível.
+                </li>
+                <li>
+                  <strong>flex-direction: column;</strong>: Organiza os itens em
+                  uma coluna.
+                </li>
+                <li>
+                  <strong>align-items: center;</strong>: Centraliza os itens
+                  horizontalmente.
+                </li>
+                <li>
+                  <strong>padding: 5px;</strong>: Adiciona um preenchimento
+                  interno de 5 pixels.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu-btn</strong>: Estiliza o botão do menu.
+              <ul>
+                <li>
+                  <strong>display: flex;</strong>: Utiliza o modelo de layout
+                  flexível.
+                </li>
+                <li>
+                  <strong>flex-direction: column;</strong>: Organiza os itens em
+                  uma coluna.
+                </li>
+                <li>
+                  <strong>justify-content: space-around;</strong>: Distribui os
+                  itens com espaço ao redor.
+                </li>
+                <li>
+                  <strong>width: 30px;</strong>: Define a largura como 30
+                  pixels.
+                </li>
+                <li>
+                  <strong>height: 30px;</strong>: Define a altura como 30
+                  pixels.
+                </li>
+                <li>
+                  <strong>cursor: pointer;</strong>: Muda o cursor para um
+                  ponteiro ao passar sobre o botão.
+                </li>
+                <li>
+                  <strong>position: relative;</strong>: Define a posição como
+                  relativa.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu-btn label</strong>: Estiliza o rótulo do botão do
+              menu.
+              <ul>
+                <li>
+                  <strong>display: flex;</strong>: Utiliza o modelo de layout
+                  flexível.
+                </li>
+                <li>
+                  <strong>flex-direction: column;</strong>: Organiza os itens em
+                  uma coluna.
+                </li>
+                <li>
+                  <strong>justify-content: space-around;</strong>: Distribui os
+                  itens com espaço ao redor.
+                </li>
+                <li>
+                  <strong>height: 100%;</strong>: Define a altura como 100% do
+                  contêiner pai.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu-btn span</strong>: Estiliza as linhas do ícone do
+              menu.
+              <ul>
+                <li><strong>display: block;</strong>: Exibe como um bloco.</li>
+                <li>
+                  <strong>width: 100%;</strong>: Define a largura como 100% do
+                  contêiner pai.
+                </li>
+                <li>
+                  <strong>height: 3px;</strong>: Define a altura como 3 pixels.
+                </li>
+                <li>
+                  <strong>background-color: #fff;</strong>: Define a cor de
+                  fundo como branco.
+                </li>
+                <li>
+                  <strong>transition: all 0.3s ease;</strong>: Adiciona uma
+                  transição suave de 0.3 segundos.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>#menu-check</strong>: Estiliza a caixa de seleção do menu.
+              <ul>
+                <li>
+                  <strong>display: none;</strong>: Oculta a caixa de seleção.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong
+                >#menu-check:checked + .menu-btn label span:nth-child(1)</strong
+              >: Estiliza a primeira linha do ícone do menu quando a caixa de
+              seleção está marcada.
+              <ul>
+                <li>
+                  <strong>transform: rotate(45deg);</strong>: Rotaciona a linha
+                  em 45 graus.
+                </li>
+                <li>
+                  <strong>position: absolute;</strong>: Define a posição como
+                  absoluta.
+                </li>
+                <li>
+                  <strong>top: 12px;</strong>: Define a posição superior como 12
+                  pixels.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong
+                >#menu-check:checked + .menu-btn label span:nth-child(2)</strong
+              >: Estiliza a segunda linha do ícone do menu quando a caixa de
+              seleção está marcada.
+              <ul>
+                <li>
+                  <strong>opacity: 0;</strong>: Define a opacidade como 0,
+                  tornando a linha invisível.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong
+                >#menu-check:checked + .menu-btn label span:nth-child(3)</strong
+              >: Estiliza a terceira linha do ícone do menu quando a caixa de
+              seleção está marcada.
+              <ul>
+                <li>
+                  <strong>transform: rotate(-45deg);</strong>: Rotaciona a linha
+                  em -45 graus.
+                </li>
+                <li>
+                  <strong>position: absolute;</strong>: Define a posição como
+                  absoluta.
+                </li>
+                <li>
+                  <strong>top: 12px;</strong>: Define a posição superior como 12
+                  pixels.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu</strong>: Estiliza o menu de navegação.
+              <ul>
+                <li><strong>display: none;</strong>: Oculta o menu.</li>
+                <li>
+                  <strong>flex-direction: column;</strong>: Organiza os itens em
+                  uma coluna.
+                </li>
+                <li>
+                  <strong>align-items: center;</strong>: Centraliza os itens
+                  horizontalmente.
+                </li>
+                <li>
+                  <strong>margin-top: 10px;</strong>: Adiciona uma margem
+                  superior de 10 pixels.
+                </li>
+                <li>
+                  <strong>padding: 5px;</strong>: Adiciona um preenchimento
+                  interno de 5 pixels.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>#menu-check:checked ~ .menu</strong>: Estiliza o menu de
+              navegação quando a caixa de seleção está marcada.
+              <ul>
+                <li>
+                  <strong>display: flex;</strong>: Exibe o menu utilizando o
+                  modelo de layout flexível.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu a</strong>: Estiliza os links do menu de navegação.
+              <ul>
+                <li>
+                  <strong>text-decoration: none;</strong>: Remove a decoração do
+                  texto (sublinhado).
+                </li>
+                <li>
+                  <strong>color: #fff;</strong>: Define a cor do texto como
+                  branco.
+                </li>
+                <li>
+                  <strong>font-size: 18px;</strong>: Define o tamanho da fonte
+                  como 18 pixels.
+                </li>
+                <li>
+                  <strong>margin-bottom: 10px;</strong>: Adiciona uma margem
+                  inferior de 10 pixels.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>.menu a:hover</strong>: Estiliza os links do menu de
+              navegação quando o cursor está sobre eles.
+              <ul>
+                <li>
+                  <strong>color: #ffff00;</strong>: Define a cor do texto como
+                  amarelo.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="botao">
+        <button onclick="testCode()">Testar</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

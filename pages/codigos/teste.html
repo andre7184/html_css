@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .menu-toggle {
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+      }
+
+      .menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .menu-btn label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+      }
+
+      .menu-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      #menu-check {
+        display: none;
+      }
+
+      #menu-check:checked + .menu-btn label span:nth-child(1) {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 12px;
+      }
+
+      #menu-check:checked + .menu-btn label span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #menu-check:checked + .menu-btn label span:nth-child(3) {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 12px;
+      }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        padding: 5px;
+      }
+
+      #menu-check:checked ~ .menu {
+        display: flex;
+      }
+      .menu a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .menu a:hover {
+        color:#ffff00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-toggle">
+      <input type="checkbox" id="menu-check" />
+      <div class="menu-btn">
+        <label for="menu-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <nav class="menu">
+        <a href="#">Home</a></li>
+        <a href="#">About</a></li>
+        <a href="#">Services</a></li>
+        <a href="#">Contact</a></li>
+      </nav>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <div class="barra-superior">
+      <div class="voltar">
+        <a href="../../index.html">Voltar</a>
+      </div>
+      <h1>Postagem</h1>
+      <div class="botao">
+        <button onclick="toggleForm()">Nova Postagem</button>
+      </div>
+    </div>
+    <div class="principal">
+      <form id="postForm">
+        <label for="username">Nome do Usuário:</label>
+        <input type="text" id="username" required />
+        <label for="category">Categoria:</label>
+        <select id="category">
+          <option value="please-wait">Please Wait</option>
+          <option value="botao-navbar">Botão Navbar</option>
+          <option value="menu-hamburguer">Menu Hamburguer</option>
+        </select>
+        <label for="postText">Texto da Postagem:</label>
+        <textarea id="postText" rows="4" required></textarea>
+        <button type="button" onclick="addPost()">Adicionar Postagem</button>
+      </form>
+      <div class="category-container" id="please-wait-container">
+        <h2 id="please-wait-title">0 postagens de Please Wait</h2>
+        <img src="../../imgs/please-wait.gif" alt="Please Wait" />
+        <div class="post-container" id="please-wait-posts"></div>
+      </div>
+      <div class="category-container" id="botao-navbar-container">
+        <h2 id="botao-navbar-title">0 postagens de Botão Navbar</h2>
+        <img src="../../imgs/botao-navbar.gif" alt="Botão Navbar" />
+        <div class="post-container" id="botao-navbar-posts"></div>
+      </div>
+      <div class="category-container" id="menu-hamburguer-container">
+        <h2 id="menu-hamburguer-title">0 postagens de Menu Hamburguer</h2>
+        <img src="../../imgs/menu-hamburguer.gif" alt="Menu Hamburguer" />
+        <div class="post-container" id="menu-hamburguer-posts"></div>
+      </div>
+    </div>
+    <script src="blog.js"></script>
+  </body>
+</html>

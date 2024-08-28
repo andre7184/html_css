@@ -12,7 +12,7 @@ function testCode() {
   // Cria o código HTML completo para a nova página
   const fullHtml = `
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <title>Preview</title>
@@ -20,19 +20,6 @@ function testCode() {
         </head>
         <body>
             ${bodyContent}
-            <textarea style="width: 100%; height: 200px;">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Preview</title>
-    <style>${cssCode}</style>
-</head>
-<body>
-    ${bodyContent}
-</body>
-</html>
-            </textarea>
         </body>
         </html>
     `;
