@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outra Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="local-titulo">
+            <div class="titulo">
+                <div class="icone"></div>
+                Outra Grid 
+            </div>
+            <div class="local-busca">
+                <input class="bt-buscar" type="text" data-valor="coluna2" id="campoBusca" placeholder="Buscar Nome">
+            </div>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th width="120px">Coluna 1 <img id="btOrdenar" data-valor="coluna1" class="sort-asc" src="img/sort.png" alt="sort"></th>
+                <th>Nome <img id="btOrdenar" data-valor="coluna2" class="sort-asc" src="img/sort.png" alt="sort"></th>
+                <th width="120px">Coluna 3 <img id="btOrdenar" data-valor="coluna3" class="sort-asc" src="img/sort.png" alt="sort"></th>
+                <th width="120px">Coluna 4 <img id="btOrdenar" data-valor="coluna4" class="sort-asc" src="img/sort.png" alt="sort"></th>
+                <th width="120px">Coluna 5 <img id="btOrdenar" data-valor="coluna5" class="sort-asc" src="img/sort.png" alt="sort"></th>
+            </tr>
+            </thead>
+            <tbody id="itensGrid">
+            <!-- As linhas da grid serão inseridas aqui -->
+            </tbody>
+        </table>
+        <div id="paginacao" class="paginacao">
+            <!-- Botões de paginação serão inseridos aqui -->
+        </div>
+    </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
