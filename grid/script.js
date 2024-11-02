@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   const config = {
-    containerId: "itensGrid", // ID do contêiner onde a grid será renderizada
-    sortButtonSelector: "#btOrdenar", // Seletor dos botões de ordenação
-    searchInputSelector: "#campoBusca", // Seletor do campo de busca
-    paginationContainerId: "paginacao", // ID do contêiner de paginação
+    idGrid: "itensGrid", // ID do contêiner onde a grid será renderizada
+    idSortBotao: "#btOrdenar", // Id do Seletor dos botões de ordenação
+    idInputBusca: "#campoBusca", // Id do Seletor do campo de busca
+    idPaginacao: "paginacao", // ID do contêiner de paginação
     itensPorPagina: 10, // Quantidade de itens por pagina
     formatarGrid: (item) => {
       let gridRow = `
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       return gridRow;
     },
-    addEventListeners: null,
+    addEventos: null,
     atualizarTotal: null
   };
 

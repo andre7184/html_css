@@ -37,7 +37,7 @@
 
   .container {
     margin-top: 100px;
-    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .local-titulo {
@@ -62,16 +62,33 @@
     width: 100%;
   }
 
-  .bt-buscar{
-    border: 1px solid var(--magenta);
+.local-busca {
+    position: relative;
+    width: fit-content;
+}
+
+.local-busca input {
+    border: 1px solid var(--preto);
     box-sizing: border-box;
     padding: 5px;
     font-size: 14px;
     line-height: 5px;
     margin-left: 20px;
-    width: 100px;
+    padding-left: 30px;
+    width: 150px;
     border-radius: 10px;
-  }
+}
+.local-busca .icon {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+.local-busca .icon img {
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+}
 
   .sort-desc {
     transform: none;
@@ -186,11 +203,13 @@
   .paginacao button {
     margin: 0 5px;
     padding: 5px 10px;
-    border: 1px solid var(--magenta);
+    border: none;
     background-color: var(--branco);
     color: var(--magenta);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 40px;
   }
 
   .paginacao button:hover {

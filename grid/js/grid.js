@@ -7,8 +7,11 @@ class Grid {
       this.currentPage = 1;
       this.itemsPerPage = config.itensPorPagina; // Número de itens por página
       this.maxPageButtons = 8; // Número máximo de botões de página visíveis
-      this.cartItemsContainer = document.getElementById(config.containerId);
-      this.botoesOrdenar = document.querySelectorAll(config.sortButtonSelector);
+      this.idLocalGrid = document.getElementById(config.idGrid);
+      this.botoesOrdenar = document.querySelectorAll(config.idSortBotao);
+      this.idPaginacao = config.idPaginacao;
+      this.idInputBusca = config.idInputBusca;
+  
   
       this.botoesOrdenar.forEach((botao) => {
         const coluna = botao.getAttribute('data-valor');
@@ -23,7 +26,7 @@ class Grid {
     }
   
     preencherGrid() {
-      this.cartItemsContainer.innerHTML = ""; // Limpa os itens existentes
+      this.idLocalGrid.innerHTML = ""; // Limpa os itens existentes
   
       const start = (this.currentPage - 1) * this.itemsPerPage;
       const end = start + this.itemsPerPage;
@@ -32,11 +35,11 @@ class Grid {
       paginatedItems.forEach((item) => { // Para cada item na página atual
         const itemRow = document.createElement("tr");
         itemRow.innerHTML = this.config.formatarGrid(item);
-        this.cartItemsContainer.appendChild(itemRow);
+        this.idLocalGrid.appendChild(itemRow);
       });
   
       // Adiciona os eventos após preencher a grid, se necessário
-      if (this.config.addEventListeners) {
+      if (this.config.addEventos) {
         this.config.addEventListeners(this.listaGrid);
       }
       
@@ -46,55 +49,65 @@ class Grid {
     }
   
     adicionarPaginacao() {
-        const paginacaoContainer = document.getElementById(this.config.paginationContainerId);
+        const paginacaoContainer = document.getElementById(this.idPaginacao);
         if (paginacaoContainer) {
-            paginacaoContainer.innerHTML = ""; // Limpa a paginação existente
-            const totalPages = Math.ceil(this.listaGrid.length / this.itemsPerPage);
-            // Botão Primeira Página
-            if (this.currentPage > 1) {
-                const firstPageButton = document.createElement("button");
-                firstPageButton.textContent = "<<";
-                firstPageButton.addEventListener("click", () => {
-                this.currentPage = 1;
-                this.preencherGrid();
-                this.adicionarPaginacao();
-                });
-                paginacaoContainer.appendChild(firstPageButton);
-            }
-            // Botões de Página
-            let qtdBotoes = this.maxPageButtons;
-            if(this.currentPage > 1 && this.currentPage < totalPages) {
-                qtdBotoes = this.maxPageButtons - 2;
-            }else if(this.currentPage === totalPages || this.currentPage === 1) {
-                qtdBotoes = this.maxPageButtons - 1;
-            }
-            const startPage = Math.max(1, this.currentPage - Math.floor(qtdBotoes / 2));
-            const endPage = Math.min(totalPages, startPage + qtdBotoes - 1);
-
-            for (let i = startPage; i <= endPage; i++) {
-                const pageButton = document.createElement("button");
-                pageButton.textContent = i;
-                pageButton.className = (i === this.currentPage) ? "active" : "";
-                pageButton.addEventListener("click", () => {
-                this.currentPage = i;
-                this.preencherGrid();
-                this.adicionarPaginacao();
-                });
-                paginacaoContainer.appendChild(pageButton);
-            }
-            // Botão Última Página
-            if (this.currentPage < totalPages) {
-                const lastPageButton = document.createElement("button");
-                lastPageButton.textContent = ">>";
-                lastPageButton.addEventListener("click", () => {
-                this.currentPage = totalPages;
-                this.preencherGrid();
-                this.adicionarPaginacao();
-                });
-                paginacaoContainer.appendChild(lastPageButton);
-            }
+          paginacaoContainer.innerHTML = ""; // Limpa a paginação existente
+          const totalPages = Math.ceil(this.listaGrid.length / this.itemsPerPage);
+          let qtdBotoes = this.maxPageButtons;
+      
+          // Ajusta a quantidade de botões visíveis
+          if (this.currentPage > 1 && this.currentPage < totalPages) {
+            qtdBotoes = this.maxPageButtons - 2;
+          } else if (this.currentPage === totalPages || this.currentPage === 1) {
+            qtdBotoes = this.maxPageButtons - 1;
+          }
+      
+          let startPage = Math.max(1, this.currentPage - Math.floor(qtdBotoes / 2));
+          let endPage = Math.min(totalPages, startPage + qtdBotoes - 1);
+      
+          // Ajusta startPage e endPage para garantir que sempre mostre qtdBotoes
+          if (endPage - startPage + 1 < qtdBotoes) {
+            startPage = Math.max(1, endPage - qtdBotoes + 1);
+          }
+      
+          // Botão Primeira Página
+          if (this.currentPage > 1) {
+            const firstPageButton = document.createElement("button");
+            firstPageButton.textContent = "<<";
+            firstPageButton.addEventListener("click", () => {
+              this.currentPage = 1;
+              this.preencherGrid();
+              this.adicionarPaginacao();
+            });
+            paginacaoContainer.appendChild(firstPageButton);
+          }
+      
+          // Botões de Página
+          for (let i = startPage; i <= endPage; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.className = (i === this.currentPage) ? "active" : "";
+            pageButton.addEventListener("click", () => {
+              this.currentPage = i;
+              this.preencherGrid();
+              this.adicionarPaginacao();
+            });
+            paginacaoContainer.appendChild(pageButton);
+          }
+      
+          // Botão Última Página
+          if (this.currentPage < totalPages) {
+            const lastPageButton = document.createElement("button");
+            lastPageButton.textContent = ">>";
+            lastPageButton.addEventListener("click", () => {
+              this.currentPage = totalPages;
+              this.preencherGrid();
+              this.adicionarPaginacao();
+            });
+            paginacaoContainer.appendChild(lastPageButton);
+          }
         }
-      }
+    }
  
     ordenarItensGrid(element, coluna) {
       if (element.className === 'sort-desc') {
@@ -159,8 +172,23 @@ class Grid {
     }
   
     adicionarBusca() {
-      const campoBusca = document.querySelector(this.config.searchInputSelector);
+      const campoBusca = document.querySelector(this.config.idInputBusca);
       if (campoBusca) {
+            // Criar o elemento de ícone
+            const icon = document.createElement('span');
+            icon.classList.add('icon');
+
+            // Criar o elemento de imagem
+            const img = document.createElement('img');
+            img.src = 'img/lupa.png'; // Caminho para a imagem da lupa
+            img.alt = 'Ícone de lupa';
+
+            // Adicionar a imagem ao ícone
+            icon.appendChild(img);
+
+            // Adicionar o ícone ao contêiner do input
+            const container = campoBusca.parentElement;
+            container.appendChild(icon);
         campoBusca.addEventListener('input', () => {
           const colunas = campoBusca.getAttribute('data-valor').split(',');
           this.buscarItens(campoBusca.value, colunas);
