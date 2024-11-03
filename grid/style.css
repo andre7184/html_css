@@ -37,7 +37,9 @@
 
   .container {
     margin-top: 100px;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
   }
 
   .local-titulo {
@@ -106,7 +108,7 @@
     border-spacing: 0 10px;
     border: none;
     width: 100%;
-    min-width: 900px;
+    max-width: 900px;
   }
 
   th img {

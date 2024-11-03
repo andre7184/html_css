@@ -1,0 +1,120 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--branco);
+    margin: 0;
+    padding: 0;
+    color: var(--preto);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.input-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group .input-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 250px; 
+}
+
+.input-container label {
+    margin-bottom: 5px;
+}
+
+.input-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--magenta);
+    border-radius: 0; /* Quadrado */
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.input-radio:checked {
+    background-color: var(--laranja); /* Fundo laranja quando selecionado */
+}
+
+.form-endereco-ativo input, 
+.form-endereco-ativo select {
+    cursor: text;
+}
+.form-endereco-desativado input, 
+.form-endereco-desativado select {
+    background-color: rgba(var(--cinza-escuro-rgb),0.3); /* Fundo cinza escuro com transparencia */
+    cursor: not-allowed;
+}
+.obs {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.asterisco {
+    color: var(--laranja);
+    font-size: 20px;
+}
+.input-text {
+    padding: 10px;
+    border: 1px solid var(--magenta);
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.input-select {
+    padding: 10px;
+    border: 1px solid var(--magenta);
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+
+.input-button {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border: 1px solid var(--magenta);
+    background-color: var(--magenta);
+    color: var(--branco);
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.input-button:hover {
+    background-color: var(--branco);
+    color: var(--preto);
+}
