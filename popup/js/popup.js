@@ -1,6 +1,10 @@
 export class Popup {
     constructor(config = {}) {
-        if(config.fecharComEsc){
+        this.estilos = ['admin', 'colaborador']; // Lista de estilos disponíveis
+        this.estilo = config.estilo && this.estilos.includes(config.estilo) ? config.estilo : this.estilos[0]; //
+        this.titulo = config.titulo || ' ';
+        this.conteudo = config.conteudo || ' ';
+        if (config.fecharComEsc) {
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape') {
                     this.hidePopup();
@@ -9,17 +13,11 @@ export class Popup {
         }
     }
 
-    async showPopup(conteudo, titulo = ' ', tipo = 'branco', callback = null) {
-        if (tipo === 'branco') {
-            await this.loadCSS('./css/popup_branco.css');
-        } else {
-            await this.loadCSS('./css/popup_azul.css');
-        }
-
+    async showPopup(callback = null) {
+        await this.loadCSS('./css/popup.css'); // Carrega um único arquivo CSS
         // Remove o elemento anterior, se existir
         const oldPopup = document.querySelector(".overlay");
         if (oldPopup) oldPopup.remove();
-
         // Cria os elementos
         const overlay = document.createElement("div");
         const popup = document.createElement("div");
@@ -31,18 +29,13 @@ export class Popup {
 
         // Define as classes e atributos
         overlay.className = "overlay";
-        popup.className = "popup";
+        popup.className = `popup popup-${this.estilo}`; // Adiciona a classe de estilo
         popupHeader.className = "popup-header";
         popupLogo.className = "popup-logo";
+        popupLogo.src = `./img/logo_${this.estilo}.png`; // Usa o índice para definir a imagem
         popupTitulo.className = "popup-titulo";
         imgClosed.className = "popup-closed";
-        if (tipo === 'branco') {
-            popupLogo.src = "";
-            imgClosed.src = "./img/bt_closed_preto.png";
-        } else {
-            popupLogo.src = "./img/logo.png";
-            imgClosed.src = "./img/bt_closed_branco.png";
-        }
+        imgClosed.src = `./img/bt_closed_${this.estilo}.png`; // Usa o índice para definir a imagem
         imgClosed.alt = "Fechar";
         imgClosed.addEventListener("click", () => this.hidePopup());
         popupBody.className = "popup-body";
@@ -57,8 +50,8 @@ export class Popup {
         document.body.appendChild(overlay);
 
         // Adiciona o conteúdo
-        popupTitulo.innerHTML = titulo;
-        popupBody.innerHTML = conteudo;
+        popupTitulo.innerHTML = this.titulo;
+        popupBody.innerHTML = this.conteudo;
 
         // Mostra o popup
         overlay.style.display = "flex";
@@ -90,10 +83,12 @@ export class Popup {
 
     hidePopup() {
         const overlay = document.querySelector(".overlay");
-        if (overlay) overlay.style.display = "none";
+        if (overlay) {
+            overlay.style.display = "none";
+            overlay.remove(); // Remove o elemento do DOM
+        }
         document.body.classList.remove('no-scroll');
     }
 }
 
-
-export default Popup; // Exporta a classe
+export default Popup;
